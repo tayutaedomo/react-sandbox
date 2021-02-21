@@ -15,11 +15,11 @@ export default function App() {
         <Header />
         <main>
           <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
             <Route path="/clock">
               <Clock />
+            </Route>
+            <Route exact path="/">
+              <Home />
             </Route>
           </Switch>
         </main>
