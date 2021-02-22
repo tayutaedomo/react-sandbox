@@ -35,8 +35,6 @@ class Clock extends React.Component {
     return (
       <div className={classes.heroContent}>
         <Container maxWidth="sm">
-          <h1>Hello, world!</h1>
-          {/* <h2>It is {this.state.date.toLocaleTimeString()}.</h2> */}
           <FormattedDate date={this.state.date} />
         </Container>
       </div>
