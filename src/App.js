@@ -5,7 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
-import Clock from './components/Clock';
+import ClockScreen from './components/Clock/ClockScreen';
 
 export default function App() {
   return (
@@ -16,7 +16,7 @@ export default function App() {
         <main>
           <Switch>
             <Route path="/clock">
-              <Clock />
+              <ClockScreen />
             </Route>
             <Route exact path="/">
               <Home />
