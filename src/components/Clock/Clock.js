@@ -16,7 +16,8 @@ class Clock extends React.Component {
   }
 
   componentDidMount() {
-    this.timerId = setInterval(() => this.tick(), 1000);
+    console.log(this.props.interval);
+    this.timerId = setInterval(() => this.tick(), this.props.interval);
   }
 
   componentWillUnmount() {
@@ -35,7 +36,10 @@ class Clock extends React.Component {
     return (
       <div className={classes.heroContent}>
         <Container maxWidth="sm">
-          <FormattedDate date={this.state.date} />
+          <FormattedDate
+            date={this.state.date}
+            interval={this.props.interval}
+          />
         </Container>
       </div>
     );
@@ -43,7 +47,11 @@ class Clock extends React.Component {
 }
 
 function FormattedDate(props) {
-  return <h2>It is {props.date.toLocaleTimeString()}.</h2>;
+  return (
+    <h2>
+      It is {props.date.toLocaleTimeString()}. (Interval:{props.interval})
+    </h2>
+  );
 }
 
 export default withStyles(useStyles)(Clock);
