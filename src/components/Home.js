@@ -64,6 +64,13 @@ export default function Home() {
               to={'/temperature_before'}
             />
           </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <HomeCard
+              headline={'Lifting state up, after'}
+              content={'Ref: https://ja.reactjs.org/docs/lifting-state-up.html'}
+              to={'/temperature_after'}
+            />
+          </Grid>
         </Grid>
       </Container>
     </React.Fragment>

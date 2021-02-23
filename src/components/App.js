@@ -7,6 +7,7 @@ import Footer from './Footer';
 import Home from './Home';
 import ClockScreen from './clock/ClockScreen';
 import TempBeforeScreen from './temperature/TempBeforeScreen';
+import TempAfterScreen from './temperature/TempAfterScreen';
 
 export default function App() {
   return (
@@ -21,6 +22,9 @@ export default function App() {
             </Route>
             <Route path="/temperature_before">
               <TempBeforeScreen />
+            </Route>
+            <Route path="/temperature_after">
+              <TempAfterScreen />
             </Route>
             <Route exact path="/">
               <Home />
