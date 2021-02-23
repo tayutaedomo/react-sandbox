@@ -53,12 +53,11 @@ export default function Home() {
           <Grid item xs={12} sm={6} md={4}>
             <Card className={classes.card}>
               <CardContent className={classes.cardContent}>
-                {/* <Typography gutterBottom variant="h5" component="h2">
-                    Heading
-                  </Typography> */}
+                <Typography gutterBottom variant="h5" component="h2">
+                  State and Lifecycle
+                </Typography>
                 <Typography>
-                  This is a media card. You can use this section to describe the
-                  content.
+                  Ref: https://reactjs.org/docs/state-and-lifecycle.html
                 </Typography>
               </CardContent>
               <CardActions>

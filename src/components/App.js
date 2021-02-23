@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Home from './components/Home';
-import ClockScreen from './components/Clock/ClockScreen';
+import Header from './Header';
+import Footer from './Footer';
+import Home from './Home';
+import ClockScreen from './clock/ClockScreen';
 
 export default function App() {
   return (
