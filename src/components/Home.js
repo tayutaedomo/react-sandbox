@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+
+import HomeCard from './HomeCard';
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
@@ -33,7 +35,6 @@ export default function Home() {
 
   return (
     <React.Fragment>
-      {/* Hero unit */}
       <div className={classes.heroContent}>
         <Container maxWidth="sm">
           <Typography
@@ -48,31 +49,27 @@ export default function Home() {
         </Container>
       </div>
       <Container className={classes.cardGrid} maxWidth="md">
-        {/* End hero unit */}
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6} md={4}>
-            <Card className={classes.card}>
-              <CardContent className={classes.cardContent}>
-                {/* <Typography gutterBottom variant="h5" component="h2">
-                    Heading
-                  </Typography> */}
-                <Typography>
-                  This is a media card. You can use this section to describe the
-                  content.
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button
-                  size="small"
-                  color="primary"
-                  component={Link}
-                  to="/clock"
-                >
-                  View
-                </Button>
-                {/* <Link to="/clock">Go to</Link> */}
-              </CardActions>
-            </Card>
+            <HomeCard
+              headline={'State and Lifecycle'}
+              content={'Ref: https://reactjs.org/docs/state-and-lifecycle.html'}
+              to={'/clock'}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <HomeCard
+              headline={'Lifting state up, before'}
+              content={'Ref: https://ja.reactjs.org/docs/lifting-state-up.html'}
+              to={'/temperature_before'}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <HomeCard
+              headline={'Lifting state up, after'}
+              content={'Ref: https://ja.reactjs.org/docs/lifting-state-up.html'}
+              to={'/temperature_after'}
+            />
           </Grid>
         </Grid>
       </Container>
