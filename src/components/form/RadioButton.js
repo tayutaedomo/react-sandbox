@@ -1,6 +1,8 @@
+import { RadioButtonChecked } from '@material-ui/icons';
 import React, { useState } from 'react';
 
-export default function () {
+// Reference: https://www.hypertextcandy.com/react-tutorial-04-form-and-events
+function RadioButton() {
   const [val, setVal] = useState('cat');
   const handleRadioChange = (e) => setVal(e.target.value);
 
@@ -29,3 +31,5 @@ export default function () {
     </fieldset>
   );
 }
+
+export default RadioButton;

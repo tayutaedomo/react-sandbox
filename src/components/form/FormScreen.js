@@ -6,6 +6,7 @@ import NameForm from './NameForm';
 import EssayForm from './EssayForm';
 import FlavorForm from './FlavorForm';
 import RadioButton from './RadioButton';
+import Checkbox from './Checkbox';
 import FileInput from './FileInput';
 
 const useStyles = makeStyles((theme) => ({
@@ -28,6 +29,7 @@ export default function () {
         <EssayForm />
         <FlavorForm />
         <RadioButton />
+        <Checkbox />
         <FileInput />
       </Container>
     </div>
