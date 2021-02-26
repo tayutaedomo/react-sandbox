@@ -4,6 +4,7 @@ import Container from '@material-ui/core/Container';
 
 import NameForm from './NameForm';
 import EssayForm from './EssayForm';
+import FlavorForm from './FlavorForm';
 import Radio from './Radio';
 
 const useStyles = makeStyles((theme) => ({
@@ -24,6 +25,7 @@ export default function () {
       <Container maxWidth="sm">
         <NameForm />
         <EssayForm />
+        <FlavorForm />
         <Radio />
       </Container>
     </div>
