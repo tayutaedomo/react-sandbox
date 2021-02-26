@@ -6,6 +6,7 @@ import NameForm from './NameForm';
 import EssayForm from './EssayForm';
 import FlavorForm from './FlavorForm';
 import Radio from './Radio';
+import FileInput from './FileInput';
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
@@ -27,6 +28,7 @@ export default function () {
         <EssayForm />
         <FlavorForm />
         <Radio />
+        <FileInput />
       </Container>
     </div>
   );
