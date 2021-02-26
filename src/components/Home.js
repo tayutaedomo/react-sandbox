@@ -71,6 +71,13 @@ export default function Home() {
               to={'/temperature_after'}
             />
           </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <HomeCard
+              headline={'Form'}
+              content={'Ref: https://ja.reactjs.org/docs/forms.html'}
+              to={'/form'}
+            />
+          </Grid>
         </Grid>
       </Container>
     </React.Fragment>
