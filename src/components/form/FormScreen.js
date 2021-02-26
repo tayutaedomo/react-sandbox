@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
 import NameForm from './NameForm';
+import EssayForm from './EssayForm';
 import Radio from './Radio';
 
 const useStyles = makeStyles((theme) => ({
@@ -22,6 +23,7 @@ export default function () {
     <div className={classes.heroContent}>
       <Container maxWidth="sm">
         <NameForm />
+        <EssayForm />
         <Radio />
       </Container>
     </div>
