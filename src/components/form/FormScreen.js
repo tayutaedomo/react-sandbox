@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
+import NameForm from './NameForm';
 import Radio from './Radio';
 
 const useStyles = makeStyles((theme) => ({
@@ -20,6 +21,7 @@ export default function () {
   return (
     <div className={classes.heroContent}>
       <Container maxWidth="sm">
+        <NameForm />
         <Radio />
       </Container>
     </div>
