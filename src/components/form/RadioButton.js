@@ -25,7 +25,7 @@ export default function () {
         />
         Like DOG
       </label>
-      <p>Selected: {val}</p>
+      <div>Selected: {val}</div>
     </fieldset>
   );
 }

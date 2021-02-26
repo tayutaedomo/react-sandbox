@@ -5,7 +5,7 @@ import Container from '@material-ui/core/Container';
 import NameForm from './NameForm';
 import EssayForm from './EssayForm';
 import FlavorForm from './FlavorForm';
-import Radio from './Radio';
+import RadioButton from './RadioButton';
 import FileInput from './FileInput';
 
 const useStyles = makeStyles((theme) => ({
@@ -27,7 +27,7 @@ export default function () {
         <NameForm />
         <EssayForm />
         <FlavorForm />
-        <Radio />
+        <RadioButton />
         <FileInput />
       </Container>
     </div>
