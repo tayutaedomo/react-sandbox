@@ -4,6 +4,7 @@ import Container from '@material-ui/core/Container';
 
 import TextFields from './TextFields';
 import Sliders from './Sliders';
+import Switches from './Switches';
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
@@ -20,6 +21,7 @@ function FormMaterialUIScreen() {
       <Container maxWidth="sm">
         <TextFields />
         <Sliders />
+        <Switches />
       </Container>
     </div>
   );
