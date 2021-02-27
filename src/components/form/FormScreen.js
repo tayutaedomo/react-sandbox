@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function () {
+function FormScreen() {
   const classes = useStyles();
 
   const [val, setVal] = useState('cat');
@@ -35,3 +35,5 @@ export default function () {
     </div>
   );
 }
+
+export default FormScreen;

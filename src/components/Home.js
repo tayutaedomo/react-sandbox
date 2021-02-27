@@ -1,10 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
@@ -19,14 +14,6 @@ const useStyles = makeStyles((theme) => ({
   cardGrid: {
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
-  },
-  card: {
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  cardContent: {
-    flexGrow: 1,
   },
 }));
 
@@ -76,6 +63,13 @@ export default function Home() {
               headline={'Form'}
               content={'Ref: https://ja.reactjs.org/docs/forms.html'}
               to={'/form'}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <HomeCard
+              headline={'Form material-ui'}
+              content={'Ref: https://material-ui.com/components/checkboxes/'}
+              to={'/form_materialui'}
             />
           </Grid>
         </Grid>
