@@ -1,4 +1,3 @@
-import { RadioButtonChecked } from '@material-ui/icons';
 import React, { useState } from 'react';
 
 // Reference: https://www.hypertextcandy.com/react-tutorial-04-form-and-events
