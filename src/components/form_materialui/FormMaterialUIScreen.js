@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
 import TextFields from './TextFields';
+import Sliders from './Sliders';
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
@@ -14,13 +15,11 @@ const useStyles = makeStyles((theme) => ({
 function FormMaterialUIScreen() {
   const classes = useStyles();
 
-  const [val, setVal] = useState('cat');
-  const handleRadioChange = (e) => setVal(e.target.value);
-
   return (
     <div className={classes.heroContent}>
       <Container maxWidth="sm">
         <TextFields />
+        <Sliders />
       </Container>
     </div>
   );
