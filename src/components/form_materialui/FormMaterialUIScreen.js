@@ -2,13 +2,6 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
-import NameForm from './NameForm';
-import EssayForm from './EssayForm';
-import FlavorForm from './FlavorForm';
-import RadioButton from './RadioButton';
-import Checkbox from './Checkbox';
-import FileInput from './FileInput';
-
 const useStyles = makeStyles((theme) => ({
   heroContent: {
     backgroundColor: theme.palette.background.paper,
@@ -16,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function FormScreen() {
+function FormMaterialUIScreen() {
   const classes = useStyles();
 
   const [val, setVal] = useState('cat');
@@ -25,15 +18,10 @@ function FormScreen() {
   return (
     <div className={classes.heroContent}>
       <Container maxWidth="sm">
-        <NameForm />
-        <EssayForm />
-        <FlavorForm />
-        <RadioButton />
-        <Checkbox />
-        <FileInput />
+        <div>FormMaterialUIScreen</div>
       </Container>
     </div>
   );
 }
 
-export default FormScreen;
+export default FormMaterialUIScreen;

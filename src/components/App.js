@@ -9,6 +9,7 @@ import ClockScreen from './clock/ClockScreen';
 import TempBeforeScreen from './temperature/TempBeforeScreen';
 import TempAfterScreen from './temperature/TempAfterScreen';
 import FormScreen from './form/FormScreen';
+import FormMaterialUIScreen from './form_materialui/FormMaterialUIScreen';
 
 export default function App() {
   return (
@@ -29,6 +30,9 @@ export default function App() {
             </Route>
             <Route path="/form">
               <FormScreen />
+            </Route>
+            <Route path="/form_materialui">
+              <FormMaterialUIScreen />
             </Route>
             <Route exact path="/">
               <Home />
