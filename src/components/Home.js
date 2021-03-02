@@ -72,6 +72,13 @@ export default function Home() {
               to={'/form_materialui'}
             />
           </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <HomeCard
+              headline={'Context'}
+              content={'Ref: https://reactjs.org/docs/context.html'}
+              to={'/context'}
+            />
+          </Grid>
         </Grid>
       </Container>
     </React.Fragment>
