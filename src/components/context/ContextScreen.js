@@ -1,16 +1,7 @@
 import React, { Component } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
 
 import CounterContext from '../../contexts/counter';
 import Counter from './Counter';
-
-const useStyles = makeStyles((theme) => ({
-  heroContent: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(3, 0, 3),
-  },
-}));
 
 export class ContextScreen extends Component {
   constructor(props) {
@@ -37,9 +28,7 @@ export class ContextScreen extends Component {
   render() {
     return (
       <CounterContext.Provider value={this.state}>
-        <Container maxWidth="sm">
-          <Counter />
-        </Container>
+        <Counter />
       </CounterContext.Provider>
     );
   }
