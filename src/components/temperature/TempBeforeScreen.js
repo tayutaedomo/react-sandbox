@@ -1,23 +1,10 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-
-const useStyles = makeStyles((theme) => ({
-  heroContent: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(3, 0, 3),
-  },
-}));
 
 export default function TempBeforeScreen() {
-  const classes = useStyles();
-
   return (
-    <div className={classes.heroContent}>
-      <Container maxWidth="sm">
-        <Calculator />
-      </Container>
-    </div>
+    <React.Fragment>
+      <Calculator />
+    </React.Fragment>
   );
 }
 

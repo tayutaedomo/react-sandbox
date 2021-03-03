@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
@@ -34,14 +33,7 @@ class Clock extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.heroContent}>
-        <Container maxWidth="sm">
-          <FormattedDate
-            date={this.state.date}
-            interval={this.props.interval}
-          />
-        </Container>
-      </div>
+      <FormattedDate date={this.state.date} interval={this.props.interval} />
     );
   }
 }
