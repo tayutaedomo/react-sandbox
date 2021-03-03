@@ -60,6 +60,15 @@ export default function Home() {
             to={'/context'}
           />
         </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <HomeCard
+            headline={'Composition'}
+            content={
+              'Ref: https://reactjs.org/docs/composition-vs-inheritance.html'
+            }
+            to={'/composition'}
+          />
+        </Grid>
       </Grid>
     </React.Fragment>
   );
