@@ -6,7 +6,8 @@ import Container from '@material-ui/core/Container';
 
 import Header from './Header';
 import Footer from './Footer';
-import Home from './Home';
+import HomeScreen from './home/HomeScreen';
+
 import ClockScreen from './clock/ClockScreen';
 import TempBeforeScreen from './temperature/TempBeforeScreen';
 import TempAfterScreen from './temperature/TempAfterScreen';
@@ -69,7 +70,7 @@ export default function App() {
             </Route>
             <Route exact path="/">
               <Container className={classes.cardGrid} maxWidth="md">
-                <Home />
+                <HomeScreen />
               </Container>
             </Route>
           </Switch>
