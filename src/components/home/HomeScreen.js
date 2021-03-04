@@ -68,6 +68,15 @@ export default function Home() {
             to={'/composition'}
           />
         </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <HomeCard
+            headline={'Higher-Order Component'}
+            content={
+              'Ref: https://reactjs.org/docs/higher-order-components.html'
+            }
+            to={'/hoc'}
+          />
+        </Grid>
       </Grid>
     </React.Fragment>
   );

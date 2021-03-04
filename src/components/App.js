@@ -15,6 +15,7 @@ import FormScreen from './form/FormScreen';
 import FormMaterialUIScreen from './form_materialui/FormMaterialUIScreen';
 import ContextScreen from './context/ContextScreen';
 import CompositionScreen from './composition/CompositionScreen';
+import HocScreen from './hoc/HocScreen';
 
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
@@ -66,6 +67,11 @@ export default function App() {
             <Route path="/composition">
               <Container className={classes.cardGrid} maxWidth="sm">
                 <CompositionScreen />
+              </Container>
+            </Route>
+            <Route path="/hoc">
+              <Container className={classes.cardGrid} maxWidth="sm">
+                <HocScreen />
               </Container>
             </Route>
             <Route exact path="/">
