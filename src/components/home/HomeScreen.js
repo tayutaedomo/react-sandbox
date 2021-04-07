@@ -77,6 +77,21 @@ export default function Home() {
             to={'/hoc'}
           />
         </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <HomeCard
+            headline={'Re-rendering'}
+            content={
+              <>
+                <p>memo/useCallback/useMemo</p>
+                <p>
+                  Ref:
+                  https://www.udemy.com/course/react_stepup/learn/lecture/24823308
+                </p>
+              </>
+            }
+            to={'/re-rendering'}
+          />
+        </Grid>
       </Grid>
     </React.Fragment>
   );
