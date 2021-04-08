@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import ChildArea from './ChildArea';
 
 const Rerendering = () => {
@@ -7,6 +7,7 @@ const Rerendering = () => {
 
   const onChangeText = (e) => setText(e.target.value);
   const onClickOpen = () => setOpen(!open);
+  const onClickClose = useCallback(() => setOpen(false), [setOpen]);
 
   return (
     <>
@@ -14,7 +15,7 @@ const Rerendering = () => {
       <br />
       <br />
       <button onClick={onClickOpen}>Open</button>
-      <ChildArea open={open} />
+      <ChildArea open={open} onClickClose={onClickClose} />
     </>
   );
 };
