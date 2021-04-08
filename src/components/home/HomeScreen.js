@@ -100,6 +100,13 @@ export default function Home() {
             to={'/styles'}
           />
         </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <HomeCard
+            headline={'Router'}
+            content={'Basic/Nested/Refactoring/Params/404'}
+            to={'/router'}
+          />
+        </Grid>
       </Grid>
     </React.Fragment>
   );
