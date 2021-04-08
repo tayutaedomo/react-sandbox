@@ -16,6 +16,7 @@ import FormMaterialUIScreen from './form_materialui/FormMaterialUIScreen';
 import ContextScreen from './context/ContextScreen';
 import CompositionScreen from './composition/CompositionScreen';
 import HocScreen from './hoc/HocScreen';
+import Rerendering from './re-rendering/Rerendering';
 
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
@@ -34,6 +35,11 @@ export default function App() {
         <Header />
         <main>
           <Switch>
+            <Route exact path="/">
+              <Container className={classes.cardGrid} maxWidth="md">
+                <HomeScreen />
+              </Container>
+            </Route>
             <Route path="/clock">
               <Container className={classes.cardGrid} maxWidth="sm">
                 <ClockScreen />
@@ -74,9 +80,9 @@ export default function App() {
                 <HocScreen />
               </Container>
             </Route>
-            <Route exact path="/">
-              <Container className={classes.cardGrid} maxWidth="md">
-                <HomeScreen />
+            <Route path="/re-rendering">
+              <Container className={classes.cardGrid} maxWidth="sm">
+                <Rerendering />
               </Container>
             </Route>
           </Switch>
