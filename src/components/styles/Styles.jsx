@@ -1,7 +1,13 @@
 import React from 'react';
 
+import InlineStyles from './InlineStyles';
+
 const Styles = () => {
-  return <div>Styles</div>;
+  return (
+    <>
+      <InlineStyles />
+    </>
+  );
 };
 
 export default Styles;
