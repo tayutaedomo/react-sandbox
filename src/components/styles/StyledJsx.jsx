@@ -1,6 +1,6 @@
 import React from 'react';
 
-function StyledJsx() {
+const StyledJsx = () => {
   return (
     <>
       <div className="container">
@@ -36,6 +36,6 @@ function StyledJsx() {
       `}</style>
     </>
   );
-}
+};
 
 export default StyledJsx;

@@ -3,6 +3,7 @@ import React from 'react';
 import InlineStyles from './InlineStyles';
 import CssModules from './CssModules';
 import StyledJsx from './StyledJsx';
+import StyledComponents from './StyledComponents';
 
 const Styles = () => {
   return (
@@ -10,6 +11,7 @@ const Styles = () => {
       <InlineStyles />
       <CssModules />
       <StyledJsx />
+      <StyledComponents />
     </>
   );
 };
