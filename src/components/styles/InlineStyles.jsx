@@ -15,7 +15,7 @@ const titleStyle = {
 };
 const buttonStyle = {
   backgroundColor: '#abedd8',
-  boarder: 'none',
+  border: 'none',
   padding: '8px',
   borderRadius: '8px',
 };
