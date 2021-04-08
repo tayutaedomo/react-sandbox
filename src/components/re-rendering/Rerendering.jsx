@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import ChildArea from './ChildArea';
 
 const Rerendering = () => {
@@ -8,6 +8,9 @@ const Rerendering = () => {
   const onChangeText = (e) => setText(e.target.value);
   const onClickOpen = () => setOpen(!open);
   const onClickClose = useCallback(() => setOpen(false), [setOpen]);
+
+  const tmp = useMemo(() => 1 + 3, []);
+  console.log({ tmp });
 
   return (
     <>
