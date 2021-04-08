@@ -82,14 +82,22 @@ export default function Home() {
             headline={'Re-rendering'}
             content={
               <>
-                <p>memo/useCallback/useMemo</p>
-                <p>
-                  Ref:
-                  https://www.udemy.com/course/react_stepup/learn/lecture/24823308
-                </p>
+                memo/useCallback/useMemo
+                <br />
+                Ref:
+                https://www.udemy.com/course/react_stepup/learn/lecture/24823308
               </>
             }
             to={'/re-rendering'}
+          />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <HomeCard
+            headline={'Style Coding'}
+            content={
+              'Inline Styles/CSS Modules/Styled JSX/Styled components/Emotion'
+            }
+            to={'/styles'}
           />
         </Grid>
       </Grid>

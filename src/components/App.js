@@ -17,6 +17,7 @@ import ContextScreen from './context/ContextScreen';
 import CompositionScreen from './composition/CompositionScreen';
 import HocScreen from './hoc/HocScreen';
 import Rerendering from './re-rendering/Rerendering';
+import Styles from './styles/Styles';
 
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
@@ -83,6 +84,11 @@ export default function App() {
             <Route path="/re-rendering">
               <Container className={classes.cardGrid} maxWidth="sm">
                 <Rerendering />
+              </Container>
+            </Route>
+            <Route path="/styles">
+              <Container className={classes.cardGrid} maxWidth="sm">
+                <Styles />
               </Container>
             </Route>
           </Switch>
