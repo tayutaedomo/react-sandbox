@@ -153,6 +153,11 @@ const cards = [
     content: 'Basic, Nested, Refactoring, Params, 404',
     to: '/router',
   },
+  {
+    headline: 'Atomic Design',
+    content: 'Atom, Molecule, Organism, Template, Page',
+    to: '/atomic_design',
+  },
 ];
 
 export default Home;
