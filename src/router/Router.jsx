@@ -1,6 +1,7 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
+import DefaultLayout from '../components/templates/DefaultLayout';
 import HomeScreen from '../components/home/HomeScreen';
 import ClockScreen from '../components/clock/ClockScreen';
 import TempBeforeScreen from '../components/temperature/TempBeforeScreen';
@@ -19,66 +20,90 @@ import AtomicDesign from '../components/atomic_design/AtomicDesign';
 
 const Router = () => {
   return (
-    <Switch>
-      <Route exact path="/">
-        <HomeScreen />
-      </Route>
-      <Route path="/clock">
-        <ClockScreen />
-      </Route>
-      <Route path="/temperature_before">
-        <TempBeforeScreen />
-      </Route>
-      <Route path="/temperature_after">
-        <TempAfterScreen />
-      </Route>
-      <Route path="/form">
-        <FormScreen />
-      </Route>
-      <Route path="/form_materialui">
-        <FormMaterialUIScreen />
-      </Route>
-      <Route path="/context">
-        <ContextScreen />
-      </Route>
-      <Route path="/composition">
-        <CompositionScreen />
-      </Route>
-      <Route path="/hoc">
-        <HocScreen />
-      </Route>
-      <Route path="/re-rendering">
-        <Rerendering />
-      </Route>
-      <Route path="/styles">
-        <Styles />
-      </Route>
-      <Route
-        path="/router"
-        render={({ match: { url } }) => (
-          <>
-            <RouterLinks />
-            <Switch>
-              {routerRoutes.map((route) => (
-                <Route
-                  key={route.path}
-                  exact={route.exact}
-                  path={`${url}${route.path}`}
-                >
-                  {route.children}
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <DefaultLayout>
+            <HomeScreen />
+          </DefaultLayout>
+        </Route>
+        <Route path="/clock">
+          <DefaultLayout>
+            <ClockScreen />
+          </DefaultLayout>
+        </Route>
+        <Route path="/temperature_before">
+          <DefaultLayout>
+            <TempBeforeScreen />
+          </DefaultLayout>
+        </Route>
+        <Route path="/temperature_after">
+          <DefaultLayout>
+            <TempAfterScreen />
+          </DefaultLayout>
+        </Route>
+        <Route path="/form">
+          <DefaultLayout>
+            <FormScreen />
+          </DefaultLayout>
+        </Route>
+        <Route path="/form_materialui">
+          <DefaultLayout>
+            <FormMaterialUIScreen />
+          </DefaultLayout>
+        </Route>
+        <Route path="/context">
+          <DefaultLayout>
+            <ContextScreen />
+          </DefaultLayout>
+        </Route>
+        <Route path="/composition">
+          <DefaultLayout>
+            <CompositionScreen />
+          </DefaultLayout>
+        </Route>
+        <Route path="/hoc">
+          <DefaultLayout>
+            <HocScreen />
+          </DefaultLayout>
+        </Route>
+        <Route path="/re-rendering">
+          <Rerendering />
+        </Route>
+        <Route path="/styles">
+          <DefaultLayout>
+            <Styles />
+          </DefaultLayout>
+        </Route>
+        <Route
+          path="/router"
+          render={({ match: { url } }) => (
+            <DefaultLayout>
+              <RouterLinks />
+              <Switch>
+                {routerRoutes.map((route) => (
+                  <Route
+                    key={route.path}
+                    exact={route.exact}
+                    path={`${url}${route.path}`}
+                  >
+                    {route.children}
+                  </Route>
+                ))}
+                <Route path={`${url}*`}>
+                  <RouterPage404 />
                 </Route>
-              ))}
-              <Route path={`${url}*`}>
-                <RouterPage404 />
-              </Route>
-            </Switch>
-          </>
-        )}
-      />
-      <Route path="/atomic_design">
-        <AtomicDesign />
-      </Route>
-    </Switch>
+              </Switch>
+            </DefaultLayout>
+          )}
+        />
+        <Route path="/atomic_design">
+          <DefaultLayout>
+            <AtomicDesign />
+          </DefaultLayout>
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 };
 
