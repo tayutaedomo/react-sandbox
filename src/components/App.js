@@ -1,27 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
 import Header from './Header';
 import Footer from './Footer';
-import HomeScreen from './home/HomeScreen';
-
-import ClockScreen from './clock/ClockScreen';
-import TempBeforeScreen from './temperature/TempBeforeScreen';
-import TempAfterScreen from './temperature/TempAfterScreen';
-import FormScreen from './form/FormScreen';
-import FormMaterialUIScreen from './form_materialui/FormMaterialUIScreen';
-import ContextScreen from './context/ContextScreen';
-import CompositionScreen from './composition/CompositionScreen';
-import HocScreen from './hoc/HocScreen';
-import Rerendering from './re-rendering/Rerendering';
-import Styles from './styles/Styles';
-import RouterHome from './router/RouterHome';
-import RouterPage1 from './router/RouterPage1';
-import RouterPage2 from './router/RouterPage2';
-import RouterLinks from './router/RouterLinks';
+import Router from '../router/Router';
 
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
@@ -34,90 +19,15 @@ export default function App() {
   const classes = useStyles();
 
   return (
-    <Router>
-      <React.Fragment>
-        <CssBaseline />
-        <Header />
-        <main>
-          <Switch>
-            <Route exact path="/">
-              <Container className={classes.cardGrid} maxWidth="md">
-                <HomeScreen />
-              </Container>
-            </Route>
-            <Route path="/clock">
-              <Container className={classes.cardGrid} maxWidth="sm">
-                <ClockScreen />
-              </Container>
-            </Route>
-            <Route path="/temperature_before">
-              <Container className={classes.cardGrid} maxWidth="sm">
-                <TempBeforeScreen />
-              </Container>
-            </Route>
-            <Route path="/temperature_after">
-              <Container className={classes.cardGrid} maxWidth="sm">
-                <TempAfterScreen />
-              </Container>
-            </Route>
-            <Route path="/form">
-              <Container className={classes.cardGrid} maxWidth="sm">
-                <FormScreen />
-              </Container>
-            </Route>
-            <Route path="/form_materialui">
-              <Container className={classes.cardGrid} maxWidth="sm">
-                <FormMaterialUIScreen />
-              </Container>
-            </Route>
-            <Route path="/context">
-              <Container className={classes.cardGrid} maxWidth="sm">
-                <ContextScreen />
-              </Container>
-            </Route>
-            <Route path="/composition">
-              <Container className={classes.cardGrid} maxWidth="sm">
-                <CompositionScreen />
-              </Container>
-            </Route>
-            <Route path="/hoc">
-              <Container className={classes.cardGrid} maxWidth="sm">
-                <HocScreen />
-              </Container>
-            </Route>
-            <Route path="/re-rendering">
-              <Container className={classes.cardGrid} maxWidth="sm">
-                <Rerendering />
-              </Container>
-            </Route>
-            <Route path="/styles">
-              <Container className={classes.cardGrid} maxWidth="sm">
-                <Styles />
-              </Container>
-            </Route>
-            <Route
-              path="/router"
-              render={({ match: { url } }) => (
-                <Container className={classes.cardGrid} maxWidth="sm">
-                  <RouterLinks />
-                  <Switch>
-                    <Route
-                      path={`${url}/page1`}
-                      render={() => <RouterPage1 />}
-                    />
-                    <Route
-                      path={`${url}/page2`}
-                      render={() => <RouterPage2 />}
-                    />
-                    <Route exact path={url} render={() => <RouterHome />} />
-                  </Switch>
-                </Container>
-              )}
-            />
-          </Switch>
-        </main>
-        <Footer />
-      </React.Fragment>
-    </Router>
+    <BrowserRouter>
+      <CssBaseline />
+      <Header />
+      <main>
+        <Container className={classes.cardGrid} maxWidth="md">
+          <Router />
+        </Container>
+      </main>
+      <Footer />
+    </BrowserRouter>
   );
 }
