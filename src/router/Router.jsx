@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import DefaultLayout from '../components/templates/DefaultLayout';
+import AtomicDesignDefaultLayout from '../components/atomic_design/templates/DefaultLayout';
 import HomeScreen from '../components/home/HomeScreen';
 import ClockScreen from '../components/clock/ClockScreen';
 import TempBeforeScreen from '../components/temperature/TempBeforeScreen';
@@ -98,9 +99,9 @@ const Router = () => {
           )}
         />
         <Route path="/atomic_design">
-          <DefaultLayout>
+          <AtomicDesignDefaultLayout>
             <AtomicDesign />
-          </DefaultLayout>
+          </AtomicDesignDefaultLayout>
         </Route>
       </Switch>
     </BrowserRouter>
