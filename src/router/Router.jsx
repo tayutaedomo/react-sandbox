@@ -14,8 +14,8 @@ import Rerendering from '../components/re-rendering/Rerendering';
 import Styles from '../components/styles/Styles';
 import RouterLinks from '../components/router/RouterLinks';
 import { routerRoutes } from './RouterRoutes';
-import RouterPage1 from '../components/router/RouterPage1';
 import RouterPage404 from '../components/router/RouterPage404';
+import AtomicDesign from '../components/atomic_design/AtomicDesign';
 
 const Router = () => {
   return (
@@ -75,6 +75,9 @@ const Router = () => {
           </>
         )}
       />
+      <Route path="/atomic_design">
+        <AtomicDesign />
+      </Route>
     </Switch>
   );
 };
