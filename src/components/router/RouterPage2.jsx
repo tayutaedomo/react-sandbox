@@ -5,7 +5,9 @@ const RouterPage2 = () => {
   return (
     <div>
       <h1>Page2</h1>
-      <Link to="/router/page2/999">UrlParameter</Link>
+      <Link to="/router/page2/999">URL Parameter</Link>
+      <br />
+      <Link to="/router/page2/100?name=hogehoge">Query Parameter</Link>
     </div>
   );
 };
