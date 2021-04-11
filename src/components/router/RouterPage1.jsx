@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Page1 = () => {
+const RouterPage1 = () => {
   return (
     <div>
       <h1>Page1</h1>
@@ -8,4 +8,4 @@ const Page1 = () => {
   );
 };
 
-export default Page1;
+export default RouterPage1;

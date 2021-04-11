@@ -18,7 +18,10 @@ import CompositionScreen from './composition/CompositionScreen';
 import HocScreen from './hoc/HocScreen';
 import Rerendering from './re-rendering/Rerendering';
 import Styles from './styles/Styles';
-import RouterPage from './router/RouterPage';
+import RouterHome from './router/RouterHome';
+import RouterPage1 from './router/RouterPage1';
+import RouterPage2 from './router/RouterPage2';
+import RouterLinks from './router/RouterLinks';
 
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
@@ -92,11 +95,25 @@ export default function App() {
                 <Styles />
               </Container>
             </Route>
-            <Route path="/router">
-              <Container className={classes.cardGrid} maxWidth="sm">
-                <RouterPage />
-              </Container>
-            </Route>
+            <Route
+              path="/router"
+              render={({ match: { url } }) => (
+                <Container className={classes.cardGrid} maxWidth="sm">
+                  <RouterLinks />
+                  <Switch>
+                    <Route
+                      path={`${url}/page1`}
+                      render={() => <RouterPage1 />}
+                    />
+                    <Route
+                      path={`${url}/page2`}
+                      render={() => <RouterPage2 />}
+                    />
+                    <Route exact path={url} render={() => <RouterHome />} />
+                  </Switch>
+                </Container>
+              )}
+            />
           </Switch>
         </main>
         <Footer />
