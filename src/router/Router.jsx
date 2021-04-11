@@ -12,10 +12,10 @@ import CompositionScreen from '../components/composition/CompositionScreen';
 import HocScreen from '../components/hoc/HocScreen';
 import Rerendering from '../components/re-rendering/Rerendering';
 import Styles from '../components/styles/Styles';
-import RouterHome from '../components/router/RouterHome';
-import RouterPage1 from '../components/router/RouterPage1';
-import RouterPage2 from '../components/router/RouterPage2';
 import RouterLinks from '../components/router/RouterLinks';
+import { routerRoutes } from './RouterRoutes';
+import RouterPage1 from '../components/router/RouterPage1';
+import RouterPage404 from '../components/router/RouterPage404';
 
 const Router = () => {
   return (
@@ -59,9 +59,18 @@ const Router = () => {
           <>
             <RouterLinks />
             <Switch>
-              <Route path={`${url}/page1`} render={() => <RouterPage1 />} />
-              <Route path={`${url}/page2`} render={() => <RouterPage2 />} />
-              <Route exact path={url} render={() => <RouterHome />} />
+              {routerRoutes.map((route) => (
+                <Route
+                  key={route.path}
+                  exact={route.exact}
+                  path={`${url}${route.path}`}
+                >
+                  {route.children}
+                </Route>
+              ))}
+              <Route path={`${url}*`}>
+                <RouterPage404 />
+              </Route>
             </Switch>
           </>
         )}
