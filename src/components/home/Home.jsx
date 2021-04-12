@@ -1,15 +1,7 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
 import HomeCard from './HomeCard';
-
-const useStyles = makeStyles((theme) => ({
-  cardGrid: {
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4),
-  },
-}));
 
 const renderCard = (card) => {
   return (
@@ -20,14 +12,15 @@ const renderCard = (card) => {
 };
 
 const Home = () => {
-  const classes = useStyles();
-
   return (
     <React.Fragment>
       <Grid container spacing={4}>
-        {cards.map((card) => {
-          return renderCard(card);
-        })}
+        {cards
+          .slice()
+          .reverse()
+          .map((card) => {
+            return renderCard(card);
+          })}
       </Grid>
     </React.Fragment>
   );
