@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 
@@ -6,6 +6,7 @@ import PrimaryButton from '../atoms/button/PrimaryButton';
 import SecondaryButton from '../atoms/button/SecondaryButton';
 import SearchInput from '../molecules/SearchInput';
 import UserCard from '../organisms/user/UserCard';
+import { UserContext } from '../../../providers/UserProvider';
 
 const user = {
   name: 'Taro',
@@ -20,17 +21,16 @@ const user = {
 
 const Top = () => {
   const history = useHistory();
+  const { setUserInfo } = useContext(UserContext);
 
-  const onClickAdmin = () =>
-    history.push({
-      pathname: '/atomic_design/users',
-      state: { isAdmin: true },
-    });
-  const onClickGeneral = () =>
-    history.push({
-      pathname: '/atomic_design/users',
-      state: { isAdmin: false },
-    });
+  const onClickAdmin = () => {
+    setUserInfo({ isAdmin: true });
+    history.push('/atomic_design/users');
+  };
+  const onClickGeneral = () => {
+    setUserInfo({ isAdmin: false });
+    history.push('/atomic_design/users');
+  };
 
   return (
     <SContainer>
