@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 
 import SearchInput from '../molecules/SearchInput';
 import UserCard from '../organisms/user/UserCard';
+import SecondaryButton from '../atoms/button/SecondaryButton';
+import { UserContext } from '../../../providers/UserProvider';
 
 const users = [...Array(10).keys()].map((val) => {
   return {
@@ -19,10 +21,15 @@ const users = [...Array(10).keys()].map((val) => {
 });
 
 const Users = () => {
+  const { userInfo, setUserInfo } = useContext(UserContext);
+  const onClickSwitch = () => setUserInfo({ isAdmin: !userInfo.isAdmin });
+  console.log({ userInfo });
+
   return (
     <SContainer>
       <h2>Users</h2>
       <SearchInput />
+      <SecondaryButton onClick={onClickSwitch}>Switch Account</SecondaryButton>
       <SUserArea>
         {users.map((user) => (
           <UserCard key={user.id} user={user} />

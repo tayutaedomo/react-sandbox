@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { memo } from 'react';
 import styled from 'styled-components';
 
 import PrimaryButton from '../atoms/button/PrimaryButton';
 import Input from '../atoms/input/Input';
 
-const SearchInput = () => {
+const SearchInput = memo(() => {
+  console.log('SearchInput');
+
   return (
     <SContainer>
       <Input placeholder="Search keyword" />
@@ -13,7 +15,7 @@ const SearchInput = () => {
       </SButtonWrapper>
     </SContainer>
   );
-};
+});
 
 const SContainer = styled.div`
   display: flex;
