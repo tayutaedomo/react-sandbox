@@ -1,12 +1,14 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
+import { useSetRecoilState } from 'recoil';
 
 import PrimaryButton from '../atoms/button/PrimaryButton';
 import SecondaryButton from '../atoms/button/SecondaryButton';
 import SearchInput from '../molecules/SearchInput';
 import UserCard from '../organisms/user/UserCard';
-import { UserContext } from '../../../providers/UserProvider';
+// import { UserContext } from '../../../providers/UserProvider';
+import { userState } from '../../../store/userState';
 
 const user = {
   name: 'Taro',
@@ -21,7 +23,8 @@ const user = {
 
 const Top = () => {
   const history = useHistory();
-  const { setUserInfo } = useContext(UserContext);
+  // const { setUserInfo } = useContext(UserContext);
+  const setUserInfo = useSetRecoilState(userState);
 
   const onClickAdmin = () => {
     setUserInfo({ isAdmin: true });
