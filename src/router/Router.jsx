@@ -20,6 +20,7 @@ import AtomicDesignDefaultLayout from '../components/atomic_design/templates/Def
 import AtomicDesignHeaderOnly from '../components/atomic_design/templates/HeaderOnly';
 import AtomicDesignTop from '../components/atomic_design/pages/Top';
 import AtomicDesignUsers from '../components/atomic_design/pages/Users';
+import JsonPlaceholder from '../components/json_placeholder/JsonPlaceholder';
 
 const Router = () => {
   return (
@@ -117,6 +118,11 @@ const Router = () => {
             </Switch>
           )}
         />
+        <Route path="/jsonplaceholder">
+          <DefaultLayout>
+            <JsonPlaceholder />
+          </DefaultLayout>
+        </Route>
       </Switch>
     </BrowserRouter>
   );

@@ -148,8 +148,21 @@ const cards = [
   },
   {
     headline: 'Atomic Design',
-    content: 'Atom, Molecule, Organism, Template, Page',
+    content: (
+      <a
+        href="https://jsonplaceholder.typicode.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Reference
+      </a>
+    ),
     to: '/atomic_design',
+  },
+  {
+    headline: 'JSON Placeholder',
+    content: 'Atom, Molecule, Organism, Template, Page',
+    to: '/jsonplaceholder',
   },
 ];
 
