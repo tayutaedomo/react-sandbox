@@ -1,15 +1,7 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
 import HomeCard from './HomeCard';
-
-const useStyles = makeStyles((theme) => ({
-  cardGrid: {
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4),
-  },
-}));
 
 const renderCard = (card) => {
   return (
@@ -20,14 +12,15 @@ const renderCard = (card) => {
 };
 
 const Home = () => {
-  const classes = useStyles();
-
   return (
     <React.Fragment>
       <Grid container spacing={4}>
-        {cards.map((card) => {
-          return renderCard(card);
-        })}
+        {cards
+          .slice()
+          .reverse()
+          .map((card) => {
+            return renderCard(card);
+          })}
       </Grid>
     </React.Fragment>
   );
@@ -155,8 +148,21 @@ const cards = [
   },
   {
     headline: 'Atomic Design',
-    content: 'Atom, Molecule, Organism, Template, Page',
+    content: (
+      <a
+        href="https://jsonplaceholder.typicode.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Reference
+      </a>
+    ),
     to: '/atomic_design',
+  },
+  {
+    headline: 'JSON Placeholder',
+    content: 'Atom, Molecule, Organism, Template, Page',
+    to: '/jsonplaceholder',
   },
 ];
 

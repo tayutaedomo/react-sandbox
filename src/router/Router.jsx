@@ -2,9 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import DefaultLayout from '../components/templates/DefaultLayout';
-import AtomicDesignDefaultLayout from '../components/atomic_design/templates/DefaultLayout';
-import AtomicDesignHeaderOnly from '../components/atomic_design/templates/HeaderOnly';
-import HomeScreen from '../components/home/HomeScreen';
+import Home from '../components/home/Home';
 import ClockScreen from '../components/clock/ClockScreen';
 import TempBeforeScreen from '../components/temperature/TempBeforeScreen';
 import TempAfterScreen from '../components/temperature/TempAfterScreen';
@@ -18,8 +16,11 @@ import Styles from '../components/styles/Styles';
 import RouterLinks from '../components/router/RouterLinks';
 import { routerRoutes } from './RouterRoutes';
 import RouterPage404 from '../components/router/RouterPage404';
+import AtomicDesignDefaultLayout from '../components/atomic_design/templates/DefaultLayout';
+import AtomicDesignHeaderOnly from '../components/atomic_design/templates/HeaderOnly';
 import AtomicDesignTop from '../components/atomic_design/pages/Top';
 import AtomicDesignUsers from '../components/atomic_design/pages/Users';
+import JsonPlaceholder from '../components/json_placeholder/JsonPlaceholder';
 
 const Router = () => {
   return (
@@ -27,7 +28,7 @@ const Router = () => {
       <Switch>
         <Route exact path="/">
           <DefaultLayout>
-            <HomeScreen />
+            <Home />
           </DefaultLayout>
         </Route>
         <Route path="/clock">
@@ -117,6 +118,11 @@ const Router = () => {
             </Switch>
           )}
         />
+        <Route path="/jsonplaceholder">
+          <DefaultLayout>
+            <JsonPlaceholder />
+          </DefaultLayout>
+        </Route>
       </Switch>
     </BrowserRouter>
   );
