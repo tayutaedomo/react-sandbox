@@ -9,7 +9,7 @@ export default function Header() {
     <AppBar position="relative">
       <Toolbar>
         <Typography variant="h6" color="inherit" noWrap>
-          <Link color="initial" href="/">
+          <Link color="inherit" href="/">
             React Sandbox
           </Link>
         </Typography>
