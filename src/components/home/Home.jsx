@@ -26,7 +26,7 @@ const Home = () => {
   );
 };
 
-const cards = [
+export const cards = [
   {
     headline: 'State and Lifecycle',
     content: (
