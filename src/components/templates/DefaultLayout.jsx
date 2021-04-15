@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
 import Header from './Header';
-import Footer from '../Footer';
+import Footer from './Footer';
 
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
