@@ -1,14 +1,25 @@
 import React, { useState } from 'react';
 import {
   AppBar,
+  createStyles,
   IconButton,
   Link,
+  makeStyles,
   Toolbar,
   Typography,
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 
 import MenuDrawer from './MenuDrawer';
+
+const useStyles = makeStyles((theme) =>
+  createStyles({
+    appBar: {
+      // zIndex: theme.zIndex.drawer + 1,
+      zIndex: theme.zIndex.modal + 1,
+    },
+  })
+);
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -21,8 +32,10 @@ export default function Header() {
     setOpen(false);
   };
 
+  const classes = useStyles();
+
   return (
-    <AppBar position="relative">
+    <AppBar position="relative" className={classes.appBar}>
       <Toolbar>
         <IconButton
           color="inherit"
