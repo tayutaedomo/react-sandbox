@@ -24,6 +24,10 @@ const useStyles = makeStyles((theme) =>
 export default function Header() {
   const [open, setOpen] = useState(false);
 
+  const onIconClick = () => {
+    setOpen(!open);
+  };
+
   const onDrawerOpen = () => {
     setOpen(true);
   };
@@ -40,7 +44,7 @@ export default function Header() {
         <IconButton
           color="inherit"
           aria-label="open drawer"
-          onClick={onDrawerOpen}
+          onClick={onIconClick}
           edge="start"
         >
           <MenuIcon />
