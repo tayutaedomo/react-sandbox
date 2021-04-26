@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
+import Page404 from '../components/Page404';
 import DefaultLayout from '../components/templates/DefaultLayout';
 import Home from '../components/home/Home';
 import ClockScreen from '../components/clock/ClockScreen';
@@ -122,6 +123,9 @@ const Router = () => {
           <DefaultLayout>
             <JsonPlaceholder />
           </DefaultLayout>
+        </Route>
+        <Route path="*">
+          <Page404 />
         </Route>
       </Switch>
     </BrowserRouter>
